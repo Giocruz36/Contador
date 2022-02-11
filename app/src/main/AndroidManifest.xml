@@ -39,5 +39,8 @@
             android:label="Herramientas"
             android:exported="true">
         </activity>
-    </application>
+
+        <service android:name=".Servicios" android:enabled="true"></service>
+
+</application>
 </manifest>
