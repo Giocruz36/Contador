@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:backgroundTint="#ffffff"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".herramientas">
+
+    <fragment
+        android:id="@+id/menu_herramientas"
+        android:name="com.example.contador.Fragmento_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_fragmento_menu" />
+
+    <RelativeLayout
+        android:id="@+id/cont_herramientas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="150dp"
+            android:background="@drawable/tools"></ImageView>
+
+    </RelativeLayout>
+
+</LinearLayout>

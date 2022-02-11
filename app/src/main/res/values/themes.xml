@@ -1,0 +1,79 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Contador" parent="Theme.Design">
+        <!-- Primary brand color. -->
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="boton">
+        <item name="android:backgroundTint">#5dbb82</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="boton2">
+        <item name="android:backgroundTint">#6f001d</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="boton3">
+        <item name="android:backgroundTint">#bdbdbd</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="boton4">
+        <item name="android:background">@drawable/keyboard_btn</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">48sp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    <style name="boton5">
+        <item name="android:background">@drawable/keyboard_btn</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:layout_width">180dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="boton6">
+        <item name="android:background">@drawable/keyboard_btn</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:layout_width">85dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">42sp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="boton7">
+        <item name="android:background">@drawable/keyboard_btn</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:layout_width">172dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="boton8">
+        <item name="android:background">@drawable/button</item>
+    </style>
+
+    <style name="forma">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="espacio">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+    </style>
+</resources>
