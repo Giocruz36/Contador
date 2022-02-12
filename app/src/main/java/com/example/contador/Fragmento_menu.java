@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class Fragmento_menu extends Fragment {
-    private final int[] BOTONESMENU = {R.id.b_linterna, R.id.b_musica, R.id.b_nivel, R.id.b_salir};
+    private final int[] BOTONESMENU = {R.id.b_linterna, R.id.b_nivel,R.id.b_musica, R.id.b_salir};
     private Button botonmenu;
+
     public Fragmento_menu() {
-        // Required empty public constructor
     }
 
     @Override

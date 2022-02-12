@@ -25,13 +25,13 @@ public class MainActivity extends AppCompatActivity {
     static SharedPreferences datos;
     static SharedPreferences.Editor miEditor;
     String msg = "Android: ";
-    private Toolbar toolbar;
+
     @Override
         protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(msg, "The onCreate() event");
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
-        toolbar=(Toolbar)findViewById(R.id.menu_toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.menu_toolbar);
         setSupportActionBar(toolbar);
         setContentView(R.layout.activity_main);
         Bundle datos = getIntent().getExtras();

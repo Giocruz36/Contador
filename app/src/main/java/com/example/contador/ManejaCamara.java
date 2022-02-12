@@ -1,5 +1,5 @@
 package com.example.contador;
 
 public interface ManejaCamara {
-    public void EnciendeApaga(boolean estadoFlash);
+    void EnciendeApaga(boolean estadoFlash);
 }

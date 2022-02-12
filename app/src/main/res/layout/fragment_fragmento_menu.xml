@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal"
-        android:weightSum="1">
+        android:weightSum="4">
 
         <Button style="@style/forma"
         android:background="@drawable/icono_linterna"
@@ -22,14 +22,14 @@
         <Space style="@style/espacio"></Space>
 
         <Button style="@style/forma"
-        android:background="@drawable/icono_nivel"
+        android:background="@drawable/icono_musica"
         android:id="@+id/b_nivel"
        />
 
         <Space style="@style/espacio"></Space>
 
         <Button style="@style/forma"
-        android:background="@drawable/icono_musica"
+        android:background="@drawable/icono_nivel"
         android:id="@+id/b_musica"
         />
 
