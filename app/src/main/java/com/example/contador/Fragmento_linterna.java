@@ -38,9 +38,9 @@ public class Fragmento_linterna extends Fragment {
         return fragmento;
     }
     public void botonEnciendaFlash(){
-        botonCamara.setImageResource(R.drawable.linterna2);
+        botonCamara.setImageResource(R.drawable.linterna);
     }
     public void botonApagaFlash(){
-        botonCamara.setImageResource(R.drawable.linterna);
+        botonCamara.setImageResource(R.drawable.linterna2);
     }
 }
