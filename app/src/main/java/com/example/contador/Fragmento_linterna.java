@@ -39,8 +39,12 @@ public class Fragmento_linterna extends Fragment {
     }
     public void botonEnciendaFlash(){
         botonCamara.setImageResource(R.drawable.linterna);
+        Activity estaActividad = getActivity();
+        ((ManejaCamara) estaActividad).EnciendeApaga(encendida);
     }
     public void botonApagaFlash(){
         botonCamara.setImageResource(R.drawable.linterna2);
+        Activity estaActividad = getActivity();
+        ((ManejaCamara) estaActividad).EnciendeApaga(encendida);
     }
 }
