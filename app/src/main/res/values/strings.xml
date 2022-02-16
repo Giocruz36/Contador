@@ -5,7 +5,6 @@
     <string name="reseteo">Reseteo</string>
     <string name="valornegat">Contar Negativos</string>
     <string name="contador">Contador</string>
-    <string name="_0">0</string>
     <string name="calculadora">calculadora</string>
     <string name="Tres_en_raya">Tres en raya</string>
     <string name="un_jugador">1 jugador</string>
@@ -16,6 +15,4 @@
     <string name="gana_jugador1">JUGADOR 1 GANA!</string>
     <string name="gana_jugador2">JUGADOR 2 GANA!</string>
     <string name="empate">EMPATE!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
