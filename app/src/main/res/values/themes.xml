@@ -73,7 +73,7 @@
 
     <style name="espacio">
         <item name="android:backgroundTint">@color/white</item>
-        <item name="android:layout_width">30dp</item>
-        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
     </style>
 </resources>

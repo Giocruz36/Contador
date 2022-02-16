@@ -12,13 +12,6 @@ public class Fragmento_menu extends Fragment {
     private final int[] BOTONESMENU = {R.id.b_linterna, R.id.b_nivel,R.id.b_musica, R.id.b_salir};
     private Button botonmenu;
 
-    public Fragmento_menu() {
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

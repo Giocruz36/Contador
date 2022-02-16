@@ -4,15 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragmento_linterna">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Enciende" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/linterna2"
+        android:background="@drawable/degradado2"
         android:id="@+id/linterna_ini"/>
 
 </FrameLayout>

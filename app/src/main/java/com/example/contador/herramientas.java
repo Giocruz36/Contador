@@ -22,7 +22,7 @@ public class herramientas extends AppCompatActivity implements ComunicaMenu, Man
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_herramientas);
         misFragmentos=new Fragment[3];
-        misFragmentos[0]= new Fragment();
+        misFragmentos[0]= new Fragmento_linterna();
         misFragmentos[1]= new Fragmento_musica();
         misFragmentos[2]= new Fragmento_nivel();
         Micamara=(CameraManager) getSystemService(Context.CAMERA_SERVICE);
