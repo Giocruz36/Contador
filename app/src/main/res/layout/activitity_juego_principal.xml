@@ -9,9 +9,6 @@
     android:weightSum="6"
     tools:context=".menu_juego">
 
-    <include layout="@layout/menu_toolbar"
-        android:id="@+id/menu_toolbar"/>
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="227dp"
@@ -116,10 +113,9 @@
             android:layout_height="49dp"
             android:layout_marginHorizontal="15dp"
             android:layout_marginTop="20dp"
-            android:text=""
             android:onClick="ejecutarinicio"
             android:background="@drawable/btn_volver_atras"
-            tools:ignore="HardcodedText,OnClick" />
+            />
     </LinearLayout>
 
 </LinearLayout>

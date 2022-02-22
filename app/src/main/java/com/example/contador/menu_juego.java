@@ -19,7 +19,6 @@ public class menu_juego extends AppCompatActivity {
     }
 
     public void ejecutarinicio(View view){
-        Intent i = new Intent(this, Pagina_principal.class);
-        startActivity(i);
+      finishAndRemoveTask();
     }
 }

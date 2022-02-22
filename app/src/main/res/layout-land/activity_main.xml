@@ -10,6 +10,23 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/botonSalir2"
+            style = "@style/boton"
+            android:onClick="cerrar_cont"
+            android:background="@drawable/btn_volver_atras"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:orientation="horizontal"
         android:weightSum="4">
