@@ -29,10 +29,7 @@ public class calculadora extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem opcion_menu) {
         int id = opcion_menu.getItemId();
-        if (id == R.id.contador_menu) {
-            ejecutarContador(null);
-            return true;
-        }
+
         if (id == R.id.calculadora_menu) {
             ejecutaCalculadora(null);
             return true;
@@ -41,13 +38,13 @@ public class calculadora extends AppCompatActivity {
             ejecutarprincipal(null);
             return true;
         }
+        if (id == R.id.b_salir) {
+            cerrar_tarea(null);
+            return true;
+        }
         return super.onOptionsItemSelected(opcion_menu);
     }
 
-    public void ejecutarContador(View v){
-        Intent i =new Intent(this , MainActivity.class);
-        startActivity(i);
-    }
     public void ejecutarprincipal(View view){
         Intent i = new Intent(this,Pagina_principal.class);
         startActivity(i);
@@ -56,7 +53,9 @@ public class calculadora extends AppCompatActivity {
         Intent i = new Intent(this, calculadora.class);
         startActivity(i);
     }
-
+    public void cerrar_tarea(View view){
+        finishAndRemoveTask();
+    }
     public void onClickIgual(View miView)
     {
          tv = (TextView) findViewById(R.id.txtNumero);

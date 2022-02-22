@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="MissingDefaultResource">
+    tools:context=".juego"
+    tools:ignore="MissingDefaultResource"
+    android:orientation="vertical">
 
     <include layout="@layout/menu_toolbar"
         android:id="@+id/menu_toolbar"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="344dp"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="49dp"
         android:background="@color/colorFondo"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="@dimen/padding_pantalla"
-        android:weightSum="1"
-        tools:context=".MainActivity">
+        android:weightSum="1">
 
         <LinearLayout
             android:id="@+id/menu"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="332dp"
             android:layout_gravity="center_vertical"
             android:clipChildren="true"
             android:clipToPadding="true"
@@ -72,6 +71,7 @@
             <Button
                 android:id="@+id/btn_dos_jugadores"
                 style="@style/btn"
+                android:layout_height="wrap_content"
                 android:text="@string/dos_jugadores" />
 
         </LinearLayout>
@@ -230,4 +230,4 @@
         android:typeface="sans"
         android:visibility="invisible" />
 
-</RelativeLayout>
+</LinearLayout>

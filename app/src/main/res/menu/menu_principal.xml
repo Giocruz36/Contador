@@ -4,10 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Pagina_principal">
 
-    <item android:id="@+id/contador_menu"
-        android:title="@string/contador"
-        app:showAsAction="never"/>
-
     <item
         android:id="@+id/calculadora_menu"
         android:title="Calculadora"
@@ -21,7 +17,7 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/salir"
+        android:id="@+id/b_salir"
         android:icon="@drawable/exit_app"
         android:title="Cerrar App"
         android:orderInCategory="4"

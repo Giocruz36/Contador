@@ -1,23 +1,17 @@
 package com.example.contador;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
-
-import android.content.pm.ActivityInfo;
-import android.os.Bundle;
+import android.annotation.SuppressLint;
+import android.content.*;
+import android.content.pm.*;
+import android.os.*;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.view.*;
+import android.view.inputmethod.*;
+import android.widget.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,10 +53,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem opcion_menu) {
         int id = opcion_menu.getItemId();
-        if (id == R.id.contador_menu) {
-            ejecutarContador(null);
-            return true;
-        }
+
         if (id == R.id.calculadora_menu) {
             ejecutaCalculadora(null);
             return true;
@@ -71,12 +62,13 @@ public class MainActivity extends AppCompatActivity {
             ejecutarprincipal(null);
             return true;
         }
+        if (id == R.id.b_salir) {
+            cerrar_cont(null);
+            return true;
+        }
         return super.onOptionsItemSelected(opcion_menu);
     }
-    public void ejecutarContador(View v){
-        Intent i =new Intent(this , MainActivity.class);
-        startActivity(i);
-    }
+
     public void ejecutarprincipal(View view){
         Intent i = new Intent(this,Pagina_principal.class);
         startActivity(i);
@@ -84,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
     public void ejecutaCalculadora(View view) {
         Intent i = new Intent(this, calculadora.class);
         startActivity(i);
+    }
+
+    public void cerrar_cont(View view){
+        finishAndRemoveTask();
     }
     public void sumar (View j){
         contador=contador+1;
@@ -114,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         mostrarResultado();
     }
 
+    @SuppressLint("SetTextI18n")
     public void mostrarResultado(){
         TextView resultado=(TextView) findViewById(R.id.valorContador);
         resultado.setText("" + contador);
@@ -161,8 +158,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onDestroy(){
             super.onDestroy();
-            datos.edit().remove("cuenta").commit();
-            datos.edit().remove("numvuelta").commit();
+            datos.edit().remove("cuenta").apply();
+            datos.edit().remove("numvuelta").apply();
             miEditor.clear();
             miEditor.commit();
             Log.d(msg,"The onDestroy() event");

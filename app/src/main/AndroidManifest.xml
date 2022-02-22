@@ -35,6 +35,10 @@
             android:exported="true">
         </activity>
 
+        <activity android:name=".juego"
+            android:label="juego_tres_en_raya"
+            android:exported="true">
+        </activity>
         <activity android:name=".herramientas"
             android:label="Herramientas"
             android:exported="true">

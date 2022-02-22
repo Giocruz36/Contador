@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:weightSum="6"
-    tools:context=".calculadora">
+    tools:context=".menu_juego">
 
     <include layout="@layout/menu_toolbar"
         android:id="@+id/menu_toolbar"/>
@@ -27,6 +27,7 @@
             android:layout_marginTop="80dp"
             android:layout_marginBottom="10dp"
             android:text=""
+            android:onClick="ejecutarjuego"
             android:background="@drawable/btn_tres_raya"
             tools:ignore="HardcodedText,UsingOnClickInXml" />
 

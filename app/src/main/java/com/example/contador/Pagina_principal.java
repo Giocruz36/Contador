@@ -28,10 +28,7 @@ public class Pagina_principal extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem opcion_menu) {
         int id = opcion_menu.getItemId();
-        if (id == R.id.contador_menu) {
-            ejecutarContador(null);
-            return true;
-        }
+
         if (id == R.id.calculadora_menu) {
             ejecutaCalculadora(null);
             return true;
@@ -40,7 +37,7 @@ public class Pagina_principal extends AppCompatActivity {
             ejecutarprincipal(null);
             return true;
         }
-        if (id == R.id.salir) {
+        if (id == R.id.b_salir) {
             ejecutarCerrar(null);
             return true;
         }
@@ -48,7 +45,7 @@ public class Pagina_principal extends AppCompatActivity {
     }
 
     public void ejecutarCerrar(View v) {
-        finish();
+        finishAndRemoveTask();
     }
 
     public void ejecutarContador(View v){
