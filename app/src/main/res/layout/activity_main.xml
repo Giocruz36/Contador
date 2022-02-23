@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@drawable/degradado"
     android:orientation="vertical"
     android:weightSum="6"
@@ -15,10 +15,11 @@
 
         <Button
             android:id="@+id/botonSalir"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/atras_contador"
             android:onClick="cerrar_cont"
-            android:background="@drawable/btn_volver_atras"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
+            android:layout_marginStart="55dp"/>
 
     </LinearLayout>
 

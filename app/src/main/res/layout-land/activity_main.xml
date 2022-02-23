@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@drawable/degradado2"
     android:orientation="vertical"
     android:weightSum="6"
@@ -16,11 +16,12 @@
 
         <Button
             android:id="@+id/botonSalir2"
-            style = "@style/boton"
+            android:layout_width="350dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="250dp"
             android:onClick="cerrar_cont"
-            android:background="@drawable/btn_volver_atras"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
+            android:background="@drawable/atras_contador"
+
             />
 
     </LinearLayout>
