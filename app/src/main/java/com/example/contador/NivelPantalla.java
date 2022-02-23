@@ -23,7 +23,7 @@ public class NivelPantalla extends AppCompatImageView {
         posLeft=100;
         posTop=75;
         posXY=100;
-        radio=dimenh/2-posLeft;
+        radio=dimenh/4-posLeft;
         fondo = iniciaFondo();
         angulos=new float[2];
         angulos[0]=0;
