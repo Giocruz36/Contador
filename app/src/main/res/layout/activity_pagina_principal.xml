@@ -64,7 +64,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684"
+        app:layout_constraintVertical_bias="0.674"
+        tools:ignore="HardcodedText,UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/podometro"
+        style="@style/boton8"
+        android:layout_width="163dp"
+        android:layout_height="48dp"
+        android:onClick="ejecutarpodometro"
+        android:text="Podómetro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79"
         tools:ignore="HardcodedText,UsingOnClickInXml" />
 
     <Button
@@ -78,7 +92,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.803"
+        app:layout_constraintVertical_bias="0.895"
         tools:ignore="HardcodedText,UsingOnClickInXml" />
 
     <EditText
@@ -95,6 +109,6 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menu_toolbar"
-        />
+        tools:ignore="Autofill,HardcodedText,TextFields" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@ public class Fragmento_musica extends Fragment {
 
     private boolean encendida;
     private ImageView botonMusica;
+
     public Fragmento_musica() {
     }
 

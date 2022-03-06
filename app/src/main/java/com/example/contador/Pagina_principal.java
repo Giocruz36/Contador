@@ -72,4 +72,8 @@ public class Pagina_principal extends AppCompatActivity {
         Intent i = new Intent(this, menu_juego.class);
         startActivity(i);
     }
+    public void ejecutarpodometro(View view){
+        Intent i = new Intent(this, Pedometer.class);
+        startActivity(i);
+    }
 }
