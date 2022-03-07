@@ -10,6 +10,16 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/herramientas_menu"
+        android:title="Herramientas"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/juegos_menu"
+        android:title="Juegos"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/volver_inicio"
         android:icon="@drawable/home"
         android:title="Inicio"

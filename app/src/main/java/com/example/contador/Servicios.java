@@ -13,7 +13,6 @@ public class Servicios extends Service {
 
     MediaPlayer miReproductor;
     Timer timer;
-    MediaPlayer mp;
     ArrayList<Integer> playlist;
     int i=0;
 
@@ -28,7 +27,9 @@ public class Servicios extends Service {
         playlist = new ArrayList<>();
         playlist.add(R.raw.musica);
         playlist.add(R.raw.pomposo);
-        mp = MediaPlayer.create(this,playlist.get(0));
+        playlist.add(R.raw.cancion1);
+        playlist.add(R.raw.cancion2);
+        miReproductor = MediaPlayer.create(this,playlist.get(1));
         miReproductor.setLooping(true);
         miReproductor.setVolume(100,100);
     }
@@ -42,8 +43,8 @@ public class Servicios extends Service {
 
     public void onDestroy(){
         super.onDestroy();
-        if (mp.isPlaying())
-            mp.stop();
+        if (miReproductor.isPlaying())
+            miReproductor.stop();
         timer.cancel();
         super.onDestroy();
     }
@@ -52,13 +53,13 @@ public class Servicios extends Service {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                mp.reset();
-                mp = MediaPlayer.create(Servicios.this,playlist.get(++i));
-                mp.start();
+                miReproductor.reset();
+                miReproductor = MediaPlayer.create(Servicios.this,playlist.get(++i));
+                miReproductor.start();
                 if (playlist.size() > i+1) {
                     playNext();
                 }
             }
-        },mp.getDuration()+100);
+        },miReproductor.getDuration()+100);
     }
 }

@@ -1,8 +1,6 @@
 package com.example.contador;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.annotation.SuppressLint;
 import android.content.*;
 import android.content.pm.*;
@@ -25,15 +23,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.d(msg, "The onCreate() event");
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.menu_toolbar);
-        setSupportActionBar(toolbar);
         setContentView(R.layout.activity_main);
         Bundle datos = getIntent().getExtras();
         num1= datos.getInt("d1");
         contador=num1;
         mostrarResultado();
         Eventoteclado teclado=new Eventoteclado();
-        EditText n_reseteo =(EditText)findViewById(R.id.valorReseteo);
+        EditText n_reseteo = findViewById(R.id.valorReseteo);
         n_reseteo.setOnEditorActionListener(teclado);
     }
     class Eventoteclado implements  TextView.OnEditorActionListener{
@@ -45,49 +41,18 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_principal, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem opcion_menu) {
-        int id = opcion_menu.getItemId();
-
-        if (id == R.id.calculadora_menu) {
-            ejecutaCalculadora(null);
-            return true;
-        }
-        if (id == R.id.volver_inicio) {
-            ejecutarprincipal(null);
-            return true;
-        }
-        if (id == R.id.b_salir) {
-            cerrar_cont(null);
-            return true;
-        }
-        return super.onOptionsItemSelected(opcion_menu);
-    }
-
-    public void ejecutarprincipal(View view){
-        Intent i = new Intent(this,Pagina_principal.class);
-        startActivity(i);
-    }
-    public void ejecutaCalculadora(View view) {
-        Intent i = new Intent(this, calculadora.class);
-        startActivity(i);
-    }
 
     public void cerrar_cont(View view){
         finishAndRemoveTask();
     }
+
     public void sumar (View j){
         contador=contador+1;
         mostrarResultado();
     }
 
     public void reseteo (View v) {
-        EditText numero_reseteo=(EditText)findViewById(R.id.valorReseteo);
+        EditText numero_reseteo= findViewById(R.id.valorReseteo);
         try {
             contador=Integer.parseInt(numero_reseteo.getText().toString());
         }catch(Exception e){
@@ -102,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     public void restar (View c){
         contador=contador-1;
         if (contador<0){
-            CheckBox negativos=(CheckBox)findViewById(R.id.negativos);
+            CheckBox negativos= findViewById(R.id.negativos);
             if (!negativos.isChecked()){
         contador=0;
             }
@@ -112,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     public void mostrarResultado(){
-        TextView resultado=(TextView) findViewById(R.id.valorContador);
+        TextView resultado= findViewById(R.id.valorContador);
         resultado.setText("" + contador);
     }
 
