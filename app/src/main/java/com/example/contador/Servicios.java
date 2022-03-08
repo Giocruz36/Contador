@@ -29,7 +29,7 @@ public class Servicios extends Service {
         playlist.add(R.raw.pomposo);
         playlist.add(R.raw.cancion1);
         playlist.add(R.raw.cancion2);
-        miReproductor = MediaPlayer.create(this,playlist.get(1));
+        miReproductor = MediaPlayer.create(this,playlist.get(0));
         miReproductor.setLooping(true);
         miReproductor.setVolume(100,100);
     }

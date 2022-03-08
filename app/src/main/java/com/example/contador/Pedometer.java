@@ -18,9 +18,10 @@ import androidx.appcompat.widget.Toolbar;
 public class Pedometer extends AppCompatActivity implements SensorEventListener {
     private TextView tv1, tv2;
     private SensorManager sensor;
-    private Sensor step, stepD;
+    private Sensor step1, step2;
     private boolean counter,detector;
-    int stepC = 0, stepCD=0;
+    int stepC = 0;
+    int stepCD=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +34,7 @@ public class Pedometer extends AppCompatActivity implements SensorEventListener 
         sensor = (SensorManager) getSystemService(SENSOR_SERVICE);
 
         if (sensor.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)!=null){
-            step = sensor.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+            step1 = sensor.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
             counter=true;
         }else{
             tv1.setText("No se presenta un contador de pasos");
@@ -41,7 +42,7 @@ public class Pedometer extends AppCompatActivity implements SensorEventListener 
         }
 
         if (sensor.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR)!=null){
-            stepD = sensor.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
+            step2 = sensor.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
             detector=true;
         }else{
             tv2.setText("No se presenta un detector de pasos");
@@ -54,7 +55,6 @@ public class Pedometer extends AppCompatActivity implements SensorEventListener 
         getMenuInflater().inflate(R.menu.menu_principal, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem opcion_menu) {
         int id = opcion_menu.getItemId();
@@ -75,9 +75,12 @@ public class Pedometer extends AppCompatActivity implements SensorEventListener 
             ejecutartools(null);
             return true;
         }
+        if (id == R.id.b_salir) {
+            cerrar_pasos(null);
+            return true;
+        }
         return super.onOptionsItemSelected(opcion_menu);
     }
-
     public void ejecutaCalculadora(View view) {
         Intent i = new Intent(this, calculadora.class);
         startActivity(i);
@@ -94,13 +97,16 @@ public class Pedometer extends AppCompatActivity implements SensorEventListener 
         Intent i = new Intent(this, menu_juego.class);
         startActivity(i);
     }
+    public void cerrar_pasos (View view){
+        finishAndRemoveTask();
+    }
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-        if (sensorEvent.sensor==step){
+        if (sensorEvent.sensor==step1){
             stepC = (int) sensorEvent.values[0];
             tv1.setText(String.valueOf(stepC));
-        }else if (sensorEvent.sensor==stepD){
+        }else if (sensorEvent.sensor==step2){
             stepCD = (int) sensorEvent.values[0];
             tv2.setText(String.valueOf(stepCD));
         }
@@ -115,19 +121,19 @@ public class Pedometer extends AppCompatActivity implements SensorEventListener 
     protected void onResume() {
         super.onResume();
         if (sensor.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)!=null);
-        sensor.registerListener(this,step,SensorManager.SENSOR_DELAY_NORMAL);
+        sensor.registerListener(this,step1,SensorManager.SENSOR_DELAY_NORMAL);
 
         if (sensor.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR)!=null)
-            sensor.registerListener(this,stepD,SensorManager.SENSOR_DELAY_NORMAL);
+            sensor.registerListener(this,step2,SensorManager.SENSOR_DELAY_NORMAL);
     }
     @Override
     protected void onPause() {
         super.onPause();
         if (sensor.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)!=null)
-        sensor.unregisterListener(this,step);
+        sensor.unregisterListener(this,step1);
 
         if (sensor.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR)!=null)
-            sensor.unregisterListener(this,stepD);
+            sensor.unregisterListener(this,step2);
     }
 
 }
