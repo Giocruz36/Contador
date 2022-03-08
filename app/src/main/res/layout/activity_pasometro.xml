@@ -21,22 +21,21 @@
             android:id="@+id/tv001"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Has ido en total"
+            android:text="Has caminado: "
             android:textColor="@color/white"
             android:textSize="45sp" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/tv1"
             android:layout_marginTop="40dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="80dp"
-
             android:textSize="50sp"
             app:cardBackgroundColor="#FFFFFF" >
             <TextView
                 android:id="@+id/tv01"
-                android:layout_marginTop="50dp"
-                android:layout_width="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:textSize="50sp"
@@ -55,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="Te acabas de ir"
+            android:text="Estas caminando: "
             android:textColor="@color/white"
             android:textSize="45sp" />
 
@@ -68,12 +67,11 @@
             app:cardBackgroundColor="#FFFFFF" >
             <TextView
                 android:id="@+id/tv02"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:textSize="50sp"
-                />
+                android:textSize="50sp" />
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
