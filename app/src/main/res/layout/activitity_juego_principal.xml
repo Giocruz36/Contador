@@ -39,25 +39,39 @@
             android:background="@drawable/tresenraya" />
 
         <Button
-            android:id="@+id/iniciajuego"
+            android:id="@+id/unjugador"
             android:layout_width="230dp"
             android:layout_height="50dp"
             android:layout_below="@+id/tablero"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/iniciarjuego"
-            android:text="Iniciar Juego"
+            android:text="1 Player"
             android:textColor="@color/naranja"
             android:onClick="ejecutarjuego"/>
+
+        <Button
+            android:id="@+id/dosjugador"
+            android:layout_width="230dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/iniciarjuego"
+            android:layout_below="@+id/unjugador"
+            android:text="2 Players"
+            android:textColor="@color/naranja"
+            android:onClick="ejecutarjuego2"/>
 
         <Button
             android:id="@+id/cerrar"
             android:layout_width="230dp"
             android:layout_height="50dp"
-            android:layout_below="@+id/iniciajuego"
+            android:layout_below="@+id/dosjugador"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"

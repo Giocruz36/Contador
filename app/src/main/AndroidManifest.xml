@@ -36,7 +36,12 @@
         </activity>
 
         <activity android:name=".juego"
-            android:label="tres_en_raya"
+            android:label="1 jugador"
+            android:exported="true">
+        </activity>
+
+        <activity android:name=".juego2"
+            android:label="2 jugadores"
             android:exported="true">
         </activity>
 

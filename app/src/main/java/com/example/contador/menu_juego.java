@@ -18,6 +18,11 @@ public class menu_juego extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void ejecutarjuego2(View view){
+        Intent i = new Intent(this, juego2.class);
+        startActivity(i);
+    }
+
     public void cerrar_juego(View view){
       finishAndRemoveTask();
     }
