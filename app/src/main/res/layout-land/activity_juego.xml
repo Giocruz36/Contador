@@ -1,235 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical"
-    android:weightSum="6"
-    tools:context=".juego"
-    tools:ignore="MissingDefaultResource">
-
-    <include layout="@layout/menu_toolbar"
-        android:id="@+id/menu_toolbar"/>
-
-    <LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/azul_oscuro"
+    tools:context=".juego">
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@color/colorFondo"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="@dimen/padding_pantalla"
-        android:weightSum="1">
+        android:id="@+id/contedor_principal">
 
         <LinearLayout
-            android:id="@+id/menu"
-            android:layout_width="wrap_content"
-            android:layout_height="332dp"
-            android:layout_gravity="center_vertical"
-            android:clipChildren="true"
-            android:clipToPadding="true"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:id="@+id/encabezado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/blanco"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/boton" />
 
             <TextView
-                style="@style/titulo"
-                android:text="@string/Tres_en_raya" />
+                android:id="@+id/player1"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Jugador 1"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btn_un_jugador"
-                style="@style/btn"
-                android:text="@string/un_jugador" />
+            <TextView
+                android:id="@+id/player2"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Jugador 2"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-            <RadioGroup
-                android:id="@+id/grupo_radio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp">
-
-                <RadioButton
-                    android:id="@+id/radio_facil"
-                    style="@style/radio"
-                    android:background="@android:color/transparent"
-                    android:checked="true"
-                    android:text="@string/facil" />
-
-                <RadioButton
-                    android:id="@+id/radio_normal"
-                    style="@style/radio"
-                    android:background="@android:color/transparent"
-                    android:text="@string/normal" />
-
-                <RadioButton
-                    android:id="@+id/radio_imposible"
-                    style="@style/radio"
-                    android:background="@android:color/transparent"
-                    android:text="@string/imposible" />
-
-            </RadioGroup>
-
-            <Button
-                android:id="@+id/btn_dos_jugadores"
-                style="@style/btn"
-                android:layout_height="wrap_content"
-                android:text="@string/dos_jugadores" />
-
+            <ImageView
+                android:id="@+id/negro"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/boton2" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/espacio1"
-            android:layout_width="65dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"></LinearLayout>
-
         <RelativeLayout
-            android:layout_width="319dp"
-            android:layout_height="316dp">
+            android:id="@+id/blacboard"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:layout_below="@id/encabezado"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/tablero3">
 
             <GridLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/color_fondo"
                 android:columnCount="3"
                 android:rowCount="3">
 
                 <ImageView
-                    android:id="@+id/a1"
-                    style="@style/casilla_a1"
-                    android:src="@drawable/casilla" />
+                    android:id="@+id/uno"
+                    android:layout_width="77dp"
+                    android:layout_height="90dp"
+                    android:Laytut_alignParentStart="true"
+                    android:layput_alignParentTop="true" />
 
                 <ImageView
-                    android:id="@+id/a2"
-                    style="@style/casilla_a2" />
+                    android:id="@+id/dos"
+                    android:layout_width="99dp"
+                    android:layout_height="90dp"
+                    android:Laytut_alignParentStart="true"
+                    android:layput_alignParentTop="true" />
 
                 <ImageView
-                    android:id="@+id/a3"
-                    style="@style/casilla_a3"
-                    android:src="@drawable/casilla" />
+                    android:id="@+id/tres"
+                    android:layout_width="78dp"
+                    android:layout_height="90dp"
+                    android:Laytut_alignParentStart="true"
+                    android:layput_alignParentTop="true" />
 
                 <ImageView
-                    android:id="@+id/b1"
-                    style="@style/casilla_b1" />
+                    android:id="@+id/cuatro"
+                    android:layout_width="77dp"
+                    android:layout_height="90dp"
+                    android:layout_alignTop="@id/cuatro"
+                    android:layput_alignParentTop="true" />
 
                 <ImageView
-                    android:id="@+id/b2"
-                    style="@style/casilla_b2" />
+                    android:id="@+id/cinco"
+                    android:layout_width="99dp"
+                    android:layout_height="90dp"
+                    android:layout_alignTop="@id/cinco"
+                    android:layput_alignParentTop="true" />
 
                 <ImageView
-                    android:id="@+id/b3"
-                    style="@style/casilla_b3" />
+                    android:id="@+id/seis"
+                    android:layout_width="78dp"
+                    android:layout_height="90dp"
+                    android:Laytut_alignParentStart="true"
+                    android:layput_alignParentTop="true" />
 
                 <ImageView
-                    android:id="@+id/c1"
-                    style="@style/casilla_c1"
-                    android:src="@drawable/casilla" />
+                    android:id="@+id/siete"
+                    android:layout_width="77dp"
+                    android:layout_height="79dp"
+                    android:layout_alignTop="@id/cinco"
+                    android:layput_alignParentTop="true" />
 
                 <ImageView
-                    android:id="@+id/c2"
-                    style="@style/casilla_c2" />
+                    android:id="@+id/ocho"
+                    android:layout_width="102dp"
+                    android:layout_height="79dp"
+                    android:layout_alignTop="@id/siete"
+                    android:layput_alignParentTop="true" />
 
                 <ImageView
-                    android:id="@+id/c3"
-                    style="@style/casilla_c3"
-                    android:src="@drawable/casilla" />
-
+                    android:id="@+id/nueve"
+                    android:layout_width="79dp"
+                    android:layout_height="79dp"
+                    android:layout_alignStart="@id/seis"
+                    android:layout_alignTop="@id/ocho" />
             </GridLayout>
-
-            <ImageView
-                android:id="@+id/tach_3"
-                android:layout_width="101dp"
-                android:layout_height="match_parent"
-                android:visibility="invisible"
-                app:srcCompat="@drawable/tachado" />
-
-            <ImageView
-                android:id="@+id/tach_0"
-                android:layout_width="match_parent"
-                android:layout_height="102dp"
-                android:visibility="invisible"
-                app:srcCompat="@drawable/tachado_estrecho" />
-
-            <ImageView
-                android:id="@+id/tach_6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="invisible"
-                app:srcCompat="@drawable/tachado_diagonal" />
-
-            <ImageView
-                android:id="@+id/tach_7"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:rotation="90"
-                android:visibility="invisible"
-                app:srcCompat="@drawable/tachado_diagonal" />
-
-            <ImageView
-                android:id="@+id/tach_1"
-                android:layout_width="match_parent"
-                android:layout_height="102dp"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:visibility="invisible"
-                app:srcCompat="@drawable/tachado_estrecho" />
-
-            <ImageView
-                android:id="@+id/tach_2"
-                android:layout_width="match_parent"
-                android:layout_height="102dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="0dp"
-                android:visibility="invisible"
-                app:srcCompat="@drawable/tachado_estrecho" />
-
-            <ImageView
-                android:id="@+id/tach_4"
-                android:layout_width="102dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:visibility="invisible"
-                app:srcCompat="@drawable/tachado" />
-
-            <ImageView
-                android:id="@+id/tach_5"
-                android:layout_width="101dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="2dp"
-                android:visibility="invisible"
-                app:srcCompat="@drawable/tachado" />
-
         </RelativeLayout>
 
-    </LinearLayout>
+        <Button
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:background="@drawable/iniciarjuego"
+            android:text="Inicar Juego"
+            android:textColor="@color/naranja"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/blacboard"
+            android:layout_marginTop="10dp"
+            android:id="@+id/inicar"/>
 
-    <TextView
-        android:id="@+id/mensaje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="9dp"
-        android:alpha="1"
-        android:background="@drawable/round_corner"
-        android:gravity="center"
-        android:paddingLeft="5dp"
-        android:paddingTop="3dp"
-        android:paddingRight="5dp"
-        android:paddingBottom="3dp"
-        android:textAlignment="gravity"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@color/colorTitulo"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:typeface="sans"
-        android:visibility="invisible" />
-
-</LinearLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

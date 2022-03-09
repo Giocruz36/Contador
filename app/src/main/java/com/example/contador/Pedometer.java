@@ -1,10 +1,13 @@
 package com.example.contador;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,38 +17,33 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 public class Pedometer extends AppCompatActivity implements SensorEventListener {
-    private TextView tv1, tv2;
+    private TextView tv2;
     private SensorManager sensor;
-    private Sensor step1, step2;
-    private boolean counter,detector;
-    int stepC = 0;
-    int stepCD=0;
+    private Sensor step2;
+    private boolean detector;
+    int stepC=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pasometro);
         Toolbar toolbar = findViewById(R.id.menu_toolbar);
         setSupportActionBar(toolbar);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        tv1 = findViewById(R.id.tv01);
+        if(ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACTIVITY_RECOGNITION) == PackageManager.PERMISSION_DENIED){ //ask for permission
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[]{Manifest.permission.ACTIVITY_RECOGNITION}, 0);
+            }
+        }
         tv2 = findViewById(R.id.tv02);
         sensor = (SensorManager) getSystemService(SENSOR_SERVICE);
-
         if (sensor.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)!=null){
-            step1 = sensor.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
-            counter=true;
-        }else{
-            tv1.setText("No se presenta un contador de pasos");
-            counter=false;
-        }
-
-        if (sensor.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR)!=null){
-            step2 = sensor.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
+            step2 = sensor.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
             detector=true;
         }else{
-            tv2.setText("No se presenta un detector de pasos");
+            tv2.setText("No se presenta un contador de pasos");
             detector=false;
         }
     }
@@ -103,12 +101,9 @@ public class Pedometer extends AppCompatActivity implements SensorEventListener 
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-        if (sensorEvent.sensor==step1){
+        if (sensorEvent.sensor==step2){
             stepC = (int) sensorEvent.values[0];
-            tv1.setText(String.valueOf(stepC));
-        }else if (sensorEvent.sensor==step2){
-            stepCD = (int) sensorEvent.values[0];
-            tv2.setText(String.valueOf(stepCD));
+            tv2.setText(String.valueOf(stepC));
         }
     }
 
@@ -120,19 +115,13 @@ public class Pedometer extends AppCompatActivity implements SensorEventListener 
     @Override
     protected void onResume() {
         super.onResume();
-        if (sensor.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)!=null);
-        sensor.registerListener(this,step1,SensorManager.SENSOR_DELAY_NORMAL);
-
-        if (sensor.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR)!=null)
+        if (sensor.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)!=null)
             sensor.registerListener(this,step2,SensorManager.SENSOR_DELAY_NORMAL);
     }
     @Override
     protected void onPause() {
         super.onPause();
         if (sensor.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)!=null)
-        sensor.unregisterListener(this,step1);
-
-        if (sensor.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR)!=null)
             sensor.unregisterListener(this,step2);
     }
 

@@ -18,7 +18,7 @@ public class menu_juego extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void ejecutarinicio(View view){
+    public void cerrar_juego(View view){
       finishAndRemoveTask();
     }
 }

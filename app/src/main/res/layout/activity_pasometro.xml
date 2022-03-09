@@ -11,57 +11,30 @@
         android:id="@+id/menu_toolbar"
         layout="@layout/menu_toolbar" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv001"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Has caminado: "
-            android:textColor="@color/white"
-            android:textSize="45sp" />
-
-            <TextView
-                android:id="@+id/tv01"
-                android:layout_marginTop="5dp"
-                android:text=""
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="40sp"
-                />
-
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="573dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv002"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="50dp"
-            android:text="Estas caminando: "
+            android:text="Estas caminando:"
             android:textColor="@color/white"
             android:textSize="45sp" />
 
-            <TextView
-                android:id="@+id/tv02"
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:text=""
-                android:textColor="@color/black"
-                android:textSize="40sp" />
+        <TextView
+            android:id="@+id/tv02"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="78dp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
 
     </LinearLayout>
 

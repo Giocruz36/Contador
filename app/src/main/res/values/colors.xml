@@ -8,4 +8,6 @@
     <color name="colorFondo">#4a9ac8</color>
     <color name="colorTitulo">#1a1a1a</color>
     <color name="colorpastel">#6a9cde</color>
+    <color name="naranja">#ff9900</color>
+    <color name="azul_oscuro">#1b1b4d</color>
 </resources>

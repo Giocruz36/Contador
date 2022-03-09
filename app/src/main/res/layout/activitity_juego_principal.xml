@@ -1,121 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:orientation="vertical"
-    android:weightSum="6"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/fondo_tic_toe"
     tools:context=".menu_juego">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="227dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:weightSum="6">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/juego_1"
-            android:layout_width="196dp"
-            android:layout_height="84dp"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginBottom="10dp"
-            android:text=""
-            android:onClick="ejecutarjuego"
-            android:background="@drawable/btn_tres_raya"
-            tools:ignore="HardcodedText,UsingOnClickInXml" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="145dp"
-            android:layout_height="84dp"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/tresenraya" />
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="227dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:weightSum="6">
-
-        <Button
-            android:id="@+id/juego_2"
-            android:layout_width="196dp"
-            android:layout_height="84dp"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginBottom="10dp"
-            android:text=""
-            android:background="@drawable/btn_ajedrez"
-            tools:ignore="HardcodedText,UsingOnClickInXml" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="145dp"
-            android:layout_height="84dp"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ajedrez" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="227dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:weightSum="6">
-
-        <Button
-            android:id="@+id/juego_3"
-            android:layout_width="196dp"
-            android:layout_height="84dp"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginBottom="10dp"
-            android:text=""
-            android:background="@drawable/btn_parchis"
-            tools:ignore="HardcodedText,UsingOnClickInXml" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="145dp"
-            android:layout_height="84dp"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/parchis" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="133dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:weightSum="1">
-
-        <Button
-            android:id="@+id/volver_atras"
-            android:layout_width="375dp"
-            android:layout_height="49dp"
-            android:layout_marginHorizontal="15dp"
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="80dp"
             android:layout_marginTop="20dp"
-            android:onClick="ejecutarinicio"
-            android:background="@drawable/btn_volver_atras"
-            />
-    </LinearLayout>
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/Tres_en_raya"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/tablero"
+            android:layout_width="230dp"
+            android:layout_height="270dp"
+            android:layout_below="@+id/titulo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/tresenraya" />
+
+        <Button
+            android:id="@+id/iniciajuego"
+            android:layout_width="230dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tablero"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/iniciarjuego"
+            android:text="Iniciar Juego"
+            android:textColor="@color/naranja"
+            android:onClick="ejecutarjuego"/>
+
+        <Button
+            android:id="@+id/cerrar"
+            android:layout_width="230dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/iniciajuego"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/iniciarjuego"
+            android:text="Salir"
+            android:textColor="@color/naranja"
+            android:onClick="cerrar_juego"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
